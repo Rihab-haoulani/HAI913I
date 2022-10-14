@@ -14,7 +14,7 @@ public class Parser {
 	
 	//private  String projectPath  = "C:\\Users\\Lenovo\\eclipse-workspace\\Sudoku";
 	private  String projectSourcePath ;/* = projectPath + "\\src"; */
-	private  String jrePath = "C:\\Program Files\\Java\\jre1.8.0_51\\lib\\rt.jar";
+	//private  String jrePath = "C:\\Program Files\\Java\\jre1.8.0_51\\lib\\rt.jar";
 	private File folder;
 	
 	
