@@ -470,7 +470,7 @@ public class Analyse {
 
 	
     public void graphToDotFile(String fileGraphPath) throws IOException {
-    	System.out.println(methodsInvocatedNames);
+    	
         FileWriter fW = new FileWriter(fileGraphPath);
         fW.write("digraph G {\n");
         for (String methodsInvocated :
@@ -492,13 +492,13 @@ public class Analyse {
         }
     }
   	
-	public void staticAnalysis(String pathProject) throws IOException {
+	public void staticAnalysis(String pathProject, String jrePath) throws IOException {
 		
-		parser.Parser parser = new parser.Parser(pathProject);
+		parser.Parser parser = new parser.Parser(pathProject, jrePath);
 		ArrayList<File> javaFiles = parser.listJavaFilesForFolder();
 		for (File javaFile : javaFiles) {
 			String content = FileUtils.readFileToString(javaFile);
-			CompilationUnit parse = new parser.Parser(pathProject).parse(content.toCharArray());
+			CompilationUnit parse = new parser.Parser(pathProject, jrePath).parse(content.toCharArray());
 
 			printNumberOfJavaClasses(parse);
 			getNumberOfLines(parse);
@@ -514,3 +514,4 @@ public class Analyse {
 		graphToDotFile("graph.dot");
 	}
 }
+
