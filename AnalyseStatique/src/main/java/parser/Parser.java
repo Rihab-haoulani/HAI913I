@@ -18,9 +18,10 @@ public class Parser {
 	private File folder;
 	
 	
-	public Parser(String projectSourcePath) {
+	public Parser(String projectSourcePath,String jrePath ) {
 		super();
 		this.projectSourcePath = projectSourcePath;
+		this.jrePath = jrePath;
 		this.folder = new File(projectSourcePath);
 	}
 	
@@ -73,3 +74,4 @@ public class Parser {
 	
 
 }
+
