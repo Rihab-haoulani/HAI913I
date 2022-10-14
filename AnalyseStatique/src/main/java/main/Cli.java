@@ -42,8 +42,12 @@ public class Cli {
 				System.out.print("Saisissez le repertoire vers le nouveau projet à analyser : ");
 				String projectPath = sc.nextLine();
 				String projectSourcePath = projectPath + "\\src";
+				
+				System.out.println("Saisissez le chemin vers votre JRE : ");
+				String jrePath = sc.nextLine();
+				
 				Analyse newAnalyse = new Analyse();
-				newAnalyse.staticAnalysis(projectSourcePath);
+				newAnalyse.staticAnalysis(projectSourcePath, jrePath);
 				chooseAFeatures(newAnalyse);
 				break;
 			case "1":
@@ -119,9 +123,12 @@ public class Cli {
 		System.out.println("Saisissez le repertoire vers le projet à analyser : ");
 		String projectPath = sc.nextLine();
 		String projectSourcePath = projectPath + "\\src";
-
+		
+		System.out.println("Saisissez le chemin vers votre JRE : ");
+		String jrePath = sc.nextLine();
+		
 		Analyse analyse = new Analyse();
-		analyse.staticAnalysis(projectSourcePath);
+		analyse.staticAnalysis(projectSourcePath, jrePath);
 
 		chooseAFeatures(analyse);
 	}
@@ -134,3 +141,4 @@ public class Cli {
 	}
 
 }
+
